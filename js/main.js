@@ -60,5 +60,5 @@ if (numeroIngresado == 0) {
 let ingresarNumero = parseInt(prompt("Ingresar Numero"));
 for ( let i=1; i<=10; i++ ) {
     let resultado = ingresarNumero * i;
-    alert(ingresarNumero + " x " + i + " = " + resultado);
+    console.log(ingresarNumero + " x " + i + " = " + resultado);
 }
