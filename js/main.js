@@ -1,7 +1,7 @@
-console.log ("hola");
+console.log("hola");
 //Esto seria el simulador interactivo, le pido al usuario un numero y que elija si quiere sumar, restar, dividir, o multiplicar y le hago la cuenta correspondiente.
 
-eleccion = prompt('Elegi la operacion matematica: +, -, *, /');
+/*eleccion = prompt('Elegi la operacion matematica: +, -, *, /');
 num1 = parseFloat(prompt('Ingresa el primer numero: '));
 num2 = parseFloat(prompt('Ingresa el segundo numero: '));
 
@@ -62,3 +62,8 @@ for ( let i=1; i<=10; i++ ) {
     let resultado = ingresarNumero * i;
     console.log(ingresarNumero + " x " + i + " = " + resultado);
 }
+*/
+
+const productos = ["Matias", "Laura","Leona"];
+console.log(productos);
+
