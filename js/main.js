@@ -1,4 +1,4 @@
-console.log("hola");
+
 //Esto seria el simulador interactivo, le pido al usuario un numero y que elija si quiere sumar, restar, dividir, o multiplicar y le hago la cuenta correspondiente.
 
 /*eleccion = prompt('Elegi la operacion matematica: +, -, *, /');
@@ -63,7 +63,110 @@ for ( let i=1; i<=10; i++ ) {
     console.log(ingresarNumero + " x " + i + " = " + resultado);
 }
 */
+//--------SEGUNDA PRE ENTREGA-------------------
+const productos = [
+    {
+        nombre: "Corona",
+        precio: 450,
+        id: "cerveza",
+    },
+    {
+        nombre: "Quimes",
+        precio: 300,
+        id: "cerveza",
+    },
+    {
+        nombre: "Brahma",
+        precio: 400,
+        id: "cerveza",
+    },
+    {
+        nombre: "Heineken",
+        precio: 375,
+        id: "cerveza",
+    },
+    {
+        nombre:"Absolut Apple",
+        precio: 1400,
+        id: "vodka",
+    }
+];
 
-const productos = ["Matias", "Laura","Leona"];
-console.log(productos);
+alert("Bienvenido a Delivery de Escabio");
+
+let opcion = parseInt(prompt("Que desea comprar?: \n 1) Corona \n 2) Quilmes \n 3) Brahma \n 4) Heineken \n 5) Absolut Apple"));
+
+
+if(opcion === 1) {
+    alert(`Usted eligio ${productos[0].nombre} y cuesta $${productos[0].precio}`);
+    let dineroUsuario = prompt("Con cuanta plata quiere pagar?");
+
+    let resultado = productos[0].precio - dineroUsuario;
+
+    if (dineroUsuario < productos[0].precio) {
+    alert(`No puede comprar, le faltan $${resultado}`);
+}else {
+    let resultadoVuelto = dineroUsuario - productos[0].precio;
+    alert(`Puede comprar, su vuelto es de $${resultadoVuelto}`)
+}
+}else if(opcion === 2) {
+    alert(`Usted eligio ${productos[1].nombre} y cuesta $${productos[1].precio}`);
+    let dineroUsuario = prompt("Con cuanta plata quiere pagar?");
+
+    let resultado = productos[1].precio - dineroUsuario;
+
+    if (dineroUsuario < productos[1].precio) {
+    alert(`No puede comprar, le faltan $${resultado}`);
+}else {
+    let resultadoVuelto = dineroUsuario - productos[1].precio;
+    alert(`Puede comprar, su vuelto es de $${resultadoVuelto}`)
+}
+}else if(opcion === 3) {
+    alert(`Usted eligio ${productos[2].nombre} y cuesta $${productos[2].precio}`);
+    let dineroUsuario = prompt("Con cuanta plata quiere pagar?");
+
+    let resultado = productos[2].precio - dineroUsuario;
+
+    if (dineroUsuario < productos[2].precio) {
+    alert(`No puede comprar, le faltan $${resultado}`);
+}else {
+    let resultadoVuelto = dineroUsuario - productos[2].precio;
+    alert(`Puede comprar, su vuelto es de $${resultadoVuelto}`)
+}
+}else if(opcion === 4) {
+    alert(`Usted eligio ${productos[3].nombre} y cuesta $${productos[3].precio}`);
+    let dineroUsuario = prompt("Con cuanta plata quiere pagar?");
+
+    let resultado = productos[3].precio - dineroUsuario;
+
+    if (dineroUsuario < productos[3].precio) {
+    alert(`No puede comprar, le faltan $${resultado}`);
+}else {
+    let resultadoVuelto = dineroUsuario - productos[3].precio;
+    alert(`Puede comprar, su vuelto es de $${resultadoVuelto}`)
+}
+}else if(opcion === 5) {
+    alert(`Usted eligio ${productos[4].nombre} y cuesta $${productos[4].precio}`);
+    let dineroUsuario = prompt("Con cuanta plata quiere pagar?");
+
+    let resultado = productos[4].precio - dineroUsuario;
+
+    if (dineroUsuario < productos[4].precio) {
+    alert(`No puede comprar, le faltan $${resultado}`);
+}else {
+    let resultadoVuelto = dineroUsuario - productos[4].precio;
+    alert(`Puede comprar, su vuelto es de $${resultadoVuelto}`)
+}
+}else {
+    alert("Elija una opcion correcta");
+    
+}
+
+
+ //--------------------Aca les muestro todos los productos de cerveza en la consola-----------------------
+
+ const cerveza = productos.filter((producto) => producto.id.includes ("cerveza"));
+ console.log(cerveza);
+
+
 
