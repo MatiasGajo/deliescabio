@@ -1,124 +1,292 @@
 
-//Esto seria el simulador interactivo, le pido al usuario un numero y que elija si quiere sumar, restar, dividir, o multiplicar y le hago la cuenta correspondiente.
-
-/*eleccion = prompt('Elegi la operacion matematica: +, -, *, /');
-num1 = parseFloat(prompt('Ingresa el primer numero: '));
-num2 = parseFloat(prompt('Ingresa el segundo numero: '));
-
-
-function calcular(a, b) {
-  switch(eleccion) {
-  case '+':
-   return a + b;
-    break;
-  case '-':
-  return a - b;
-    break;
-  case '*':
-    return a * b;
-    break;
-  case '/':
-    return a / b;
-  default:
-    0;
- }
-}
-
-alert(calcular(num1, num2));
-//Ejercio de condicional, le pido al usuario que ingrese un numero y yo le digo que numero ingreso.
-
-
-let numeroIngresado = prompt("Ingresa un numero del 0 al 9");
-
-if (numeroIngresado == 0) {
-    alert("El numero que ingresaste es cero");
-} else if (numeroIngresado == 1) {
-    alert("El numero que ingresaste es uno");
-} else if (numeroIngresado == 2) {
-    alert("El numero que ingresaste es dos");
-} else if (numeroIngresado == 3) {
-    alert("El numero que ingresaste es tres");
-} else if (numeroIngresado == 4) {
-    alert("El numero que ingresaste es cuatro");
-} else if (numeroIngresado == 5) {
-    alert("El numero que ingresaste es cinco");
-} else if (numeroIngresado == 6) {
-    alert("El numero que ingresaste es seis");
-} else if (numeroIngresado == 7) {
-    alert("El numero que ingresaste es siete");
-} else if (numeroIngresado == 8) {
-    alert("El numero que ingresaste es ocho");
-} else if (numeroIngresado == 9) {
-    alert("El numero que ingresaste es nueve");
-} else {
-    alert("Por favor, ingrese un numero correcto.");
-}
-
-
-//Le pido al usuario que ingrese un numero y ese numero se lo multiplico 10 veces
-
-let ingresarNumero = parseInt(prompt("Ingresar Numero"));
-for ( let i=1; i<=10; i++ ) {
-    let resultado = ingresarNumero * i;
-    console.log(ingresarNumero + " x " + i + " = " + resultado);
-}
-*/
 //--------SEGUNDA PRE ENTREGA-------------------
 const productos = [
     {
-        nombre: "Corona",
+        nombre: "CORONA",
         precio: 450,
-        id: "cerveza",
+        id: 1,
+        img: "./img/CORONA.png",
+
     },
     {
-        nombre: "Quilmes",
-        precio: 300,
-        id: "cerveza",
+        nombre: "BRAHMA",
+        precio: 450,
+        id: 2,
+        img: "./img/BRAHMA.png",
+
     },
     {
-        nombre: "Brahma",
-        precio: 400,
-        id: "cerveza",
+        nombre: "HEINEKEN",
+        precio: 450,
+        id: 3,
+        img: "./img/HEINEKEN.png",
+
     },
     {
-        nombre: "Heineken",
-        precio: 375,
-        id: "cerveza",
+        nombre: "QUILMES",
+        precio: 450,
+        id: 4,
+        img: "./img/QUILMES.png",
+
     },
     {
-        nombre:"Absolut Apple",
-        precio: 1400,
-        id: "vodka",
-    }
+        nombre: "SALTA CAUTIVA ROJA",
+        precio: 450,
+        id: 5,
+        img: "./img/SALTACAUTIVAROJA.png",
+
+    },
+    {
+        nombre: "SCHNEIDER NEGRA",
+        precio: 450,
+        id: 6,
+        img: "./img/SCHNEIDERNEGRA.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SCHNEIDER ROJA",
+        precio: 450,
+        id: 7,
+        img: "./img/SCHNEIDERROJA.png",
+        cantidad: 1
+    },
+    {
+        nombre: "STELLA ARTOIS",
+        precio: 450,
+        id: 8,
+        img: "./img/STELLAARTOIS.png",
+        cantidad: 1
+    },
+    {
+        nombre: "MALIBU",
+        precio: 450,
+        id: 9,
+        img: "./img/MALIBU.png",
+        cantidad: 1       
+    },
+    {
+        nombre: "ABSOLUT APPLE",
+        precio: 450,
+        id: 10,
+        img: "./img/ABSOLUTAPPLE.png",
+        cantidad: 1
+    },
+    {
+        nombre: "ABSOLUT GRAPEFUIT",
+        precio: 450,
+        id: 11,
+        img: "./img/ABSOLUTGRAPEFRUIT.png",
+        cantidad: 1
+    },
+    {
+        nombre: "ABSOLUT PEARS",
+        precio: 450,
+        id: 12,
+        img: "./img/ABSOLUTPEARS.png",
+        cantidad: 1
+    },
+    {
+        nombre: "ABSOLUT RASPBERRI",
+        precio: 450,
+        id: 13,
+        img: "./img/ABSOLUTRASPBERRI.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SERNOVA FRESH CITRUS",
+        precio: 450,
+        id: 14,
+        img: "./img/VODKASERNOVAFRESHCITRUS.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SERNOVA SWEET APPLE PEAR",
+        precio: 450,
+        id: 15,
+        img: "./img/VODKASERNOVASWEETAPPLEPEAR.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SERNOVA WILD BERRIES",
+        precio: 450,
+        id: 16,
+        img: "./img/VODKASERNOVA WILDBERRIES.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SMIRNOFF",
+        precio: 450,
+        id: 17,
+        img: "./img/SMIRNOFF.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SMIRNOFF GREEN APPLE",
+        precio: 450,
+        id: 18,
+        img: "./img/SMIRNOFFGREENAPPLE.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SMIRNOFF RASPBERRY",
+        precio: 450,
+        id: 19,
+        img: "./img/SMIRNOFFRASPBERRY.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SKYY",
+        precio: 450,
+        id: 20,
+        img: "./img/SKYY.png",
+        cantidad: 1
+    },
+    {
+        nombre: "SKYY RASPBERRY",
+        precio: 450,
+        id: 21,
+        img: "./img/SKYYRASPBERRY.png",
+        cantidad: 1
+    },
+    {
+        nombre: "FERNET BRANCA",
+        precio: 450,
+        id: 22,
+        img: "./img/FERNETBRANCA.png",
+        cantidad: 1
+    },
+    {
+        nombre: "COCA COLA",
+        precio: 450,
+        id: 23,
+        img: "./img/COCACOLA.png",
+        cantidad: 1
+    },
+    {
+        nombre: "COSECHA TARDIA",
+        precio: 450,
+        id: 24,
+        img: "./img/COSECHATARDIA.png",
+        cantidad: 1
+    },
 ];
 
-alert("Bienvenido a Delivery de Escabio");
+let carrito = [];
 
-let opcion = prompt("Que desea comprar?: \n Corona $450\n Quilmes $300\n Brahma $400\n Heineken $375\n Absolut Apple $1400\n Ejemplo: Corona");
-const buscado = (productos.find((producto) => producto.nombre === opcion))
-
-console.log(buscado);
-alert(`Su producto elegido es ${buscado.nombre} y su precio es de $${buscado.precio}`)
-
-let dineroUsuario = prompt("Con cuanto dinero va a pagar?");
-let resultadoUsuario = buscado.precio - dineroUsuario;
-let resultadoUsuarioVenta = dineroUsuario - buscado.precio;
-if (dineroUsuario < buscado.precio) {
-    alert(`No le alcanza para comprar su ${buscado.nombre}, le faltan $${resultadoUsuario}`)
-} else {
-    alert(`Gracias por comprar su ${buscado.nombre}, su vuelto es de $${resultadoUsuarioVenta}`)
+if (localStorage.getItem("carrito")) {
+    carrito = JSON.parse(localStorage.getItem("carrito"))
 }
 
 
+const containerProductos = document.getElementById("containerProductos");
+console.log(containerProductos)
 
 
+const mostrarProductos = () => {
+    productos.forEach( producto => {
+       const card = document.createElement("div");
+        card.classList.add("col-xl-2", "col-md-6", "col-xs-12");
+        card.innerHTML = `
+                <div class="card mt-3">
+                <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
+                    <div class= "card-body">
+                        <h5>${producto.nombre}</h5>
+                        <p> $${producto.precio} </p>
+                        <button class="colorBoton" id="boton${producto.id}"> Agregar al Carrito </button>
+                    </div>
+                </div>
+                        `
+containerProductos.appendChild(card);
+
+const boton = document.getElementById(`boton${producto.id}`)
+
+boton.addEventListener("click", () => {
+    agregarCarrito(producto.id);
+})
+    })
+}
+
+mostrarProductos();
+
+const agregarCarrito = (id) => {
+    const productoCarrito = carrito.find(producto => producto.id === id)
+    if(productoCarrito) {
+        productoCarrito.cantidad++;
+    }else {
+        const productoo = productos.find(producto => producto.id === id)
+        carrito.push(productoo)
+    }
+    total()
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
 
 
- //--------------------Aca les muestro todos los productos de cerveza en la consola-----------------------
+const containerCarrito = document.getElementById("containerCarrito")
+const verCarrito = document.getElementById("verCarrito")
+const vaciarCarrito = document.getElementById("vaciarCarrito")
 
- const cerveza = productos.filter((producto) => producto.id.includes ("cerveza"));
- console.log(cerveza);
- 
+verCarrito.addEventListener("click", () => {
+    mostrarCarrito()
+} )
+
+const mostrarCarrito = () => {
+    containerCarrito.innerHTML = "";
+
+    carrito.forEach(producto => {
+        const card = document.createElement("div");
+        card.classList.add("col-xl-2", "col-md-6", "col-xs-12");
+        card.innerHTML = `
+                <div class="card mt-3">
+                <img src="${producto.img}" class="card-img-top imgProductos" alt="${producto.nombre}">
+                    <div class= "card-body">
+                        <h5>${producto.nombre}</h5>
+                        <p> $${producto.precio} </p>
+                        <p>${producto.cantidad} </p>
+                        <button class="colorBoton" id="botonEliminar${producto.id}"> Eliminar Producto </button>
+                    </div>
+                </div>
+                        `
+
+containerCarrito.appendChild(card);
+
+const boton = document.getElementById(`botonEliminar${producto.id}`)
+boton.addEventListener("click", () =>{
+    eliminarCarrito(producto.id);
+})
+    })
+    total()
+}
+
+const eliminarCarrito = (id) => {
+    const producto = carrito.find(producto => producto.id === id)
+    const indice = carrito.indexOf(producto)
+    carrito.splice(indice, 1)
+    
+    mostrarCarrito()
+
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
 
 
+vaciarCarrito.addEventListener("click", () => {
+    vaciarTodoElCarrito()
+})
 
+const vaciarTodoElCarrito = () => {
+    carrito = [];
+    mostrarCarrito()
+
+    localStorage.clear()
+}
+
+
+const totalCompra = document.getElementById("totalCompra");
+
+const total = () => {
+    let numero = 0;
+    carrito.forEach(producto => {
+        numero += producto.precio * producto.cantidad
+    })
+
+    totalCompra.innerHTML = `Total: $${numero}`
+}

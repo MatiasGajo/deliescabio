@@ -56,10 +56,6 @@ section {
     margin-right: 20px;
 }
 
-.card-img-top {
-    width: 20px;
-    height: 400px;
-}
 
 .aa {
     display: flex;
@@ -76,13 +72,34 @@ section {
     
 }
 
+
+
+
+.hola {
+    max-width: 18rem;
+}
+
+.imgProductos {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-top: 1rem;
+}
+
 .card {
-    transition: width 1s ease;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.colorBoton {
+    color: white;
+    background-color: rgb(70, 10, 18);
+    border-radius: 5px solid;
+}
+
+.colorBoton:hover {
+    background-color: rgb(120, 10, 18);
 }
 
 
-.card:hover {
-    width: 500px;
-    box-shadow: 0 4px 25px 0 rgba(148, 141, 141, 0.3), 0 0 1px 0 rgba(148,141,141,.25);
-
-}
