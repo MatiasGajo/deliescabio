@@ -1,175 +1,12 @@
+let productos = [];
 
-//--------SEGUNDA PRE ENTREGA-------------------
-const productos = [
-    {
-        nombre: "CORONA",
-        precio: 450,
-        id: 1,
-        img: "./img/CORONA.png",
+fetch("./js/productos.json")
+.then(response => response.json())
+.then(data => {
+    productos = data;
+    mostrarProductos()
+})
 
-    },
-    {
-        nombre: "BRAHMA",
-        precio: 450,
-        id: 2,
-        img: "./img/BRAHMA.png",
-
-    },
-    {
-        nombre: "HEINEKEN",
-        precio: 450,
-        id: 3,
-        img: "./img/HEINEKEN.png",
-
-    },
-    {
-        nombre: "QUILMES",
-        precio: 450,
-        id: 4,
-        img: "./img/QUILMES.png",
-
-    },
-    {
-        nombre: "SALTA CAUTIVA ROJA",
-        precio: 450,
-        id: 5,
-        img: "./img/SALTACAUTIVAROJA.png",
-
-    },
-    {
-        nombre: "SCHNEIDER NEGRA",
-        precio: 450,
-        id: 6,
-        img: "./img/SCHNEIDERNEGRA.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SCHNEIDER ROJA",
-        precio: 450,
-        id: 7,
-        img: "./img/SCHNEIDERROJA.png",
-        cantidad: 1
-    },
-    {
-        nombre: "STELLA ARTOIS",
-        precio: 450,
-        id: 8,
-        img: "./img/STELLAARTOIS.png",
-        cantidad: 1
-    },
-    {
-        nombre: "MALIBU",
-        precio: 450,
-        id: 9,
-        img: "./img/MALIBU.png",
-        cantidad: 1       
-    },
-    {
-        nombre: "ABSOLUT APPLE",
-        precio: 450,
-        id: 10,
-        img: "./img/ABSOLUTAPPLE.png",
-        cantidad: 1
-    },
-    {
-        nombre: "ABSOLUT GRAPEFUIT",
-        precio: 450,
-        id: 11,
-        img: "./img/ABSOLUTGRAPEFRUIT.png",
-        cantidad: 1
-    },
-    {
-        nombre: "ABSOLUT PEARS",
-        precio: 450,
-        id: 12,
-        img: "./img/ABSOLUTPEARS.png",
-        cantidad: 1
-    },
-    {
-        nombre: "ABSOLUT RASPBERRI",
-        precio: 450,
-        id: 13,
-        img: "./img/ABSOLUTRASPBERRI.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SERNOVA FRESH CITRUS",
-        precio: 450,
-        id: 14,
-        img: "./img/VODKASERNOVAFRESHCITRUS.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SERNOVA SWEET APPLE PEAR",
-        precio: 450,
-        id: 15,
-        img: "./img/VODKASERNOVASWEETAPPLEPEAR.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SERNOVA WILD BERRIES",
-        precio: 450,
-        id: 16,
-        img: "./img/VODKASERNOVA WILDBERRIES.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SMIRNOFF",
-        precio: 450,
-        id: 17,
-        img: "./img/SMIRNOFF.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SMIRNOFF GREEN APPLE",
-        precio: 450,
-        id: 18,
-        img: "./img/SMIRNOFFGREENAPPLE.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SMIRNOFF RASPBERRY",
-        precio: 450,
-        id: 19,
-        img: "./img/SMIRNOFFRASPBERRY.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SKYY",
-        precio: 450,
-        id: 20,
-        img: "./img/SKYY.png",
-        cantidad: 1
-    },
-    {
-        nombre: "SKYY RASPBERRY",
-        precio: 450,
-        id: 21,
-        img: "./img/SKYYRASPBERRY.png",
-        cantidad: 1
-    },
-    {
-        nombre: "FERNET BRANCA",
-        precio: 450,
-        id: 22,
-        img: "./img/FERNETBRANCA.png",
-        cantidad: 1
-    },
-    {
-        nombre: "COCA COLA",
-        precio: 450,
-        id: 23,
-        img: "./img/COCACOLA.png",
-        cantidad: 1
-    },
-    {
-        nombre: "COSECHA TARDIA",
-        precio: 450,
-        id: 24,
-        img: "./img/COSECHATARDIA.png",
-        cantidad: 1
-    },
-];
 
 let carrito = [];
 
@@ -209,6 +46,19 @@ boton.addEventListener("click", () => {
 mostrarProductos();
 
 const agregarCarrito = (id) => {
+    Toastify({
+        text: "Producto Agregado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #111, #111)",
+          borderRadius: "1rem",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     const productoCarrito = carrito.find(producto => producto.id === id)
     if(productoCarrito) {
         productoCarrito.cantidad++;
@@ -216,6 +66,7 @@ const agregarCarrito = (id) => {
         const productoo = productos.find(producto => producto.id === id)
         carrito.push(productoo)
     }
+    mostrarCarrito()
     total()
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
@@ -258,6 +109,19 @@ boton.addEventListener("click", () =>{
 }
 
 const eliminarCarrito = (id) => {
+    Toastify({
+        text: "Producto Eliminado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #111, #111)",
+          borderRadius: "1rem",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     const producto = carrito.find(producto => producto.id === id)
     const indice = carrito.indexOf(producto)
     carrito.splice(indice, 1)
@@ -273,10 +137,28 @@ vaciarCarrito.addEventListener("click", () => {
 })
 
 const vaciarTodoElCarrito = () => {
-    carrito = [];
-    mostrarCarrito()
-
-    localStorage.clear()
+    if(carrito.length != 0){
+        Swal.fire({
+            title: 'Estas seguro?',
+            icon: 'info',
+            html:
+              'Se van a borrar todos tus productos',
+            showCancelButton: true,
+            focusConfirm: false,
+            confirmButtonText:
+              'Si',
+            cancelButtonText:
+              'No',
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                carrito = [];
+                mostrarCarrito()
+            
+                localStorage.clear()
+            }
+          })
+    }
 }
 
 
@@ -288,5 +170,17 @@ const total = () => {
         numero += producto.precio * producto.cantidad
     })
 
-    totalCompra.innerHTML = `Total: $${numero}`
+    totalCompra.innerHTML = `$${numero}`
 }
+
+const comprar = document.getElementById("comprar");
+
+comprar.addEventListener("click",() =>{
+    if(carrito.length != 0){
+        Swal.fire('Muchas gracias por su compra!')
+        carrito = [];
+        mostrarCarrito()
+    
+        localStorage.clear()
+    }
+})
