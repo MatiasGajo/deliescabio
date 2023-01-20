@@ -73,12 +73,8 @@ const agregarCarrito = (id) => {
 
 
 const containerCarrito = document.getElementById("containerCarrito")
-const verCarrito = document.getElementById("verCarrito")
-const vaciarCarrito = document.getElementById("vaciarCarrito")
 
-verCarrito.addEventListener("click", () => {
-    mostrarCarrito()
-} )
+const vaciarCarrito = document.getElementById("vaciarCarrito")
 
 const mostrarCarrito = () => {
     containerCarrito.innerHTML = "";
@@ -154,9 +150,18 @@ const vaciarTodoElCarrito = () => {
             if (result.isConfirmed) {
                 carrito = [];
                 mostrarCarrito()
-            
                 localStorage.clear()
             }
+          })
+    }else {
+        Swal.fire({
+            title: 'No es posible!',
+            icon: 'info',
+            html:
+              'No tienes productos en tu carrito',
+            focusConfirm: false,
+            confirmButtonText:
+              'OK',
           })
     }
 }
@@ -182,5 +187,15 @@ comprar.addEventListener("click",() =>{
         mostrarCarrito()
     
         localStorage.clear()
+    }else {
+        Swal.fire({
+            title: 'No es posible!',
+            icon: 'info',
+            html:
+              'No tienes productos en tu carrito',
+            focusConfirm: false,
+            confirmButtonText:
+              'OK',
+          })
     }
 })
