@@ -10,9 +10,9 @@ fetch("./js/productos.json")
 
 let carrito = [];
 
-if (localStorage.getItem("carrito")) {
-    carrito = JSON.parse(localStorage.getItem("carrito"))
-}
+  if (localStorage.getItem("carrito")) {
+      carrito = JSON.parse(localStorage.getItem("carrito"))
+  }
 
 
 const containerProductos = document.getElementById("containerProductos");
@@ -37,13 +37,14 @@ containerProductos.appendChild(card);
 
 const boton = document.getElementById(`boton${producto.id}`)
 
+
 boton.addEventListener("click", () => {
     agregarCarrito(producto.id);
 })
     })
 }
 
-mostrarProductos();
+
 
 const agregarCarrito = (id) => {
     Toastify({
@@ -68,9 +69,8 @@ const agregarCarrito = (id) => {
     }
     mostrarCarrito()
     total()
-    localStorage.setItem("carrito", JSON.stringify(carrito))
+     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
-
 
 const containerCarrito = document.getElementById("containerCarrito")
 
@@ -88,6 +88,7 @@ const mostrarCarrito = () => {
                     <div class= "card-body">
                         <h5>${producto.nombre}</h5>
                         <p> $${producto.precio} </p>
+                        <button onclick="botonMas()" class="botonColor">+</button>
                         <p>${producto.cantidad} </p>
                         <button class="colorBoton" id="botonEliminar${producto.id}"> Eliminar Producto </button>
                     </div>
@@ -121,10 +122,9 @@ const eliminarCarrito = (id) => {
     const producto = carrito.find(producto => producto.id === id)
     const indice = carrito.indexOf(producto)
     carrito.splice(indice, 1)
-    
     mostrarCarrito()
 
-    localStorage.setItem("carrito", JSON.stringify(carrito))
+     localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 
@@ -150,7 +150,7 @@ const vaciarTodoElCarrito = () => {
             if (result.isConfirmed) {
                 carrito = [];
                 mostrarCarrito()
-                localStorage.clear()
+                 localStorage.clear()
             }
           })
     }else {
@@ -186,7 +186,7 @@ comprar.addEventListener("click",() =>{
         carrito = [];
         mostrarCarrito()
     
-        localStorage.clear()
+         localStorage.clear()
     }else {
         Swal.fire({
             title: 'No es posible!',
@@ -199,3 +199,9 @@ comprar.addEventListener("click",() =>{
           })
     }
 })
+
+
+
+const botonMas = () => {
+    console.log("click")
+}
