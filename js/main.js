@@ -49,7 +49,7 @@ boton.addEventListener("click", () => {
 const agregarCarrito = (id) => {
     Toastify({
         text: "Producto Agregado",
-        duration: 3000,
+        duration: 2000,
         close: true,
         gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`
@@ -88,7 +88,8 @@ const mostrarCarrito = () => {
                     <div class= "card-body">
                         <h5>${producto.nombre}</h5>
                         <p> $${producto.precio} </p>
-                        <button onclick="botonMas()" class="botonColor">+</button>
+                        <button id="${producto.id}" class="botonColor botonSumar">+</button>
+                        <button id="${producto.id}" class="botonColor botonRestar">-</button>
                         <p>${producto.cantidad} </p>
                         <button class="colorBoton" id="botonEliminar${producto.id}"> Eliminar Producto </button>
                     </div>
@@ -97,18 +98,43 @@ const mostrarCarrito = () => {
 
 containerCarrito.appendChild(card);
 
-const boton = document.getElementById(`botonEliminar${producto.id}`)
-boton.addEventListener("click", () =>{
-    eliminarCarrito(producto.id);
-})
+  const boton = document.getElementById(`botonEliminar${producto.id}`)
+  boton.addEventListener("click", () =>{
+      eliminarCarrito(producto.id);
+ })
     })
+
+const botonSumar = document.querySelectorAll(".botonSumar")
+
+botonSumar.forEach(btn => btn.addEventListener("click", sumarProd))
+
+const botonRestar = document.querySelectorAll(".botonRestar")
+
+botonRestar.forEach(btn => btn.addEventListener("click", restarProd))
+
     total()
+}
+
+const restarProd = (e) => {
+    const prod = carrito.findIndex( prod => prod.id === parseInt(e.target.id))
+    if (carrito[prod].cantidad > 1) {
+    carrito[prod].cantidad--
+    mostrarCarrito()
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+}
+}
+
+const sumarProd = (e) => {
+    const prod = carrito.findIndex( prod => prod.id === parseInt(e.target.id))
+    carrito[prod].cantidad++
+    mostrarCarrito()
+    localStorage.setItem("carrito", JSON.stringify(carrito))
 }
 
 const eliminarCarrito = (id) => {
     Toastify({
         text: "Producto Eliminado",
-        duration: 3000,
+        duration: 2000,
         close: true,
         gravity: "top", // `top` or `bottom`
         position: "right", // `left`, `center` or `right`

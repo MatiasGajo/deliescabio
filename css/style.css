@@ -3,6 +3,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+
 .cabezado {
     width: auto;
     height: 200px;
@@ -103,3 +104,18 @@ section {
 }
 
 
+.ordenes {
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+    padding: 2rem;
+    border: #111 3px solid;
+    margin-left: 70rem;
+    background-color: #ececec;
+    margin-top: 1.5rem;
+    
+}
+
+.carritopa {
+    background-color: #f8f8f8;
+}

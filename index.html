@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Document</title>
+    <title>Tu Escabio</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,9 +14,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="cabezado">
+    <!-- <header class="cabezado">
         <img src="./img/logo1.png" alt="Logo tu escabio">
-    </header>
+    </header> -->
     <main class="escabio">
         <h1>DELIVERY DE ESCABIO</h1>
         <p>Tu escabio es una pagina de bebidas frias con los mejores precios del mercado y entregas a tu domicilio en un instante.  </p>
@@ -29,11 +29,12 @@
         <div class="aa">
             <p class="productos">Carrito</p>
         </div>
-        <button id="vaciarCarrito" class="botonColor">Vaciar Carrito</button>
-        <div id="containerCarrito" class="row container-fluid"></div>
+        <div id="containerCarrito" class="row container-fluid carritopa"></div>
+        <div class="ordenes">
         <h4>Total de la compra: <span id="totalCompra"></span></h4>
+        <button id="vaciarCarrito" class="botonColor">Vaciar Carrito</button>
         <button id="comprar" class="botonColor">Comprar</button>
-        <button id="hola" class="botonColor">hola</button>
+        </div>
     <!-- JavaScript Bundle with Popper -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
